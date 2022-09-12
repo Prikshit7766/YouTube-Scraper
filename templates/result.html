@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+body {
+  background-image: url('theme_ntp_background.jpeg');
+}
+</style>
+</head>
+
+<body>
+<h2>FINAL RESULT </h2>
+
+<body>
+   channel name----> {{ channel_name }}
+   <br><br>
+   Total_videos ---> {{ Total_video }}
+   <br><br>
+   channel URL ---> {{ channel_URL }}
+
+   <br><br>
+
+   record of video
+
+{% for table in tables %}
+
+                    {{ table|safe }}
+   {% endfor %}
+
+   <br><br>
+   <br><br>
+
+
+    <p>YouTube Thumbnail will be uploaded to mogoDB in base64 format</p>
+   <br>
+    <p>videos will be first download into local system then it will be upload to google drive</p><br><br>
+    <p>All the information regarding the channel and individual video will be uploaded to snowflake</p><br><br>
+
+
+
+
+</body>
+
+
+
+
+
+</html>
